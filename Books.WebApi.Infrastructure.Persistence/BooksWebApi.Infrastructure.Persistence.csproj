@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BooksWebApi.Core.Application\BooksWebApi.Core.Application.csproj" />
+    <ProjectReference Include="..\BooksWebApi.Core.Domain\BooksWebApi.Core.Domain.csproj" />
     <ProjectReference Include="..\Domain\BooksWebApi.Core.Domain.csproj" />
   </ItemGroup>
 

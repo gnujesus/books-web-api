@@ -1,5 +1,4 @@
 ﻿using BooksWebApi.Core.Domain.Common;
-using Swashbuckle.AspNetCore.Annotations; // Swagger attributes
 
 namespace BooksWebApi.Core.Domain.Entities
 {

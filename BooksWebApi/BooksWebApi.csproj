@@ -13,8 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Books.WebApi.Infrastructure.Persistence\BooksWebApi.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\BooksWebApi.Core.Application\BooksWebApi.Core.Application.csproj" />
-    <ProjectReference Include="..\BookWebApi.Core.Domain\BooksWebApi.Core.Domain.csproj" />
-    <ProjectReference Include="..\Domain\BooksWebApi.Core.Domain.csproj" />
+    <ProjectReference Include="..\BooksWebApi.Core.Domain\BooksWebApi.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>

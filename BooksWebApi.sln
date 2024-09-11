@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksWebApi.Core.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksWebApi.Infrastructure.Persistence", "Books.WebApi.Infrastructure.Persistence\BooksWebApi.Infrastructure.Persistence.csproj", "{09D717FA-090C-47FF-BA5A-B7ECE1F6AD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksWebApi.Core.Domain", "Domain\BooksWebApi.Core.Domain.csproj", "{9BF839A1-03C2-483C-8636-7C26D748B601}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksWebApi.Core.Domain", "BooksWebApi.Core.Domain\BooksWebApi.Core.Domain.csproj", "{F89A45FE-454D-40B2-AD41-1AA20FEB936E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{09D717FA-090C-47FF-BA5A-B7ECE1F6AD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09D717FA-090C-47FF-BA5A-B7ECE1F6AD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09D717FA-090C-47FF-BA5A-B7ECE1F6AD11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BF839A1-03C2-483C-8636-7C26D748B601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BF839A1-03C2-483C-8636-7C26D748B601}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BF839A1-03C2-483C-8636-7C26D748B601}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BF839A1-03C2-483C-8636-7C26D748B601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89A45FE-454D-40B2-AD41-1AA20FEB936E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89A45FE-454D-40B2-AD41-1AA20FEB936E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89A45FE-454D-40B2-AD41-1AA20FEB936E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89A45FE-454D-40B2-AD41-1AA20FEB936E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
