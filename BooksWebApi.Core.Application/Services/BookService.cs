@@ -40,7 +40,7 @@ namespace BooksWebApi.Core.Application.Services
         public BookDto GetBookByQuery(Dictionary<string, object> query)
         {
             List<BookDto> books = _mapper.Map<List<BookDto>>(GetAllBooks());
-            BookDto result;
+            BookDto? result;
 
             foreach(var value in query.Values)
             {
@@ -49,29 +49,21 @@ namespace BooksWebApi.Core.Application.Services
 
                 if (valid)
                 {
-                    result = (BookDto) books.Where(b => b.Id.ToString() == value?.ToString() ||
+                    result = books.Where(b => b.Id.ToString() == value?.ToString() ||
                     b.Name == value?.ToString() ||
                     b.Author == value?.ToString() ||
-                    b.Description.Contains(value?.ToString()!));
+                    b.Description.Contains(value?.ToString()!)).FirstOrDefault();
 
                     return result;
                 }  
                 else
                 {
-                    result = new BookDto()
-                    {
-                        Id = 0,
-                        Name = "Invalid",
-                        Author = "Invalid",
-                        Description = "Invalid Book Request"
-                    };
-
-                    return result;
+                    result = null;
                 }
             }
 
             // just to push without errors
-            return new BookDto();
+            return null;
 
         }
 

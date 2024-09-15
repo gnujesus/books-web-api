@@ -13,6 +13,6 @@ namespace BooksWebApi.Core.Application.DTOs.BookDTOs
         public string Name { get; set; } = string.Empty;
         public string Author { get; set; }
         public string Description { get; set; }
-        public Dictionary<int, PageDto> Pages { get; set; } = new Dictionary<int, PageDto>();
+        public Dictionary<int, PageDto>? Pages { get; set; } = new Dictionary<int, PageDto>();
     }
 }
