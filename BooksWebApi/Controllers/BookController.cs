@@ -37,8 +37,10 @@ namespace BooksWebApi.Controllers
             return Ok(res);
         }
 
-        [HttpGet("{id}/{name}/{author}/{description}")]
-        public IActionResult GetBy([FromRoute] int id = 0, string name = "", string author = "", string description = ""){
+        [Route("get-by")]
+        [HttpGet]
+        public IActionResult GetBy([FromRoute] int id = 0, string? name = "", string? author = "", string? description = "")
+        {
 
             Dictionary<string, object> query = new()
             {
@@ -48,17 +50,17 @@ namespace BooksWebApi.Controllers
                 {"description", description}
             };
 
-            BookDto res = _bookService.GetBookById(id);
+            BookDto book = _bookService.GetBookByQuery(query);
 
-            if (res == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            return Ok(res);
+            return Ok(book);
         }
 
-        [HttpGet("page/{bookId}/{pageNumber}")]
+        [HttpGet("get-by-page-number/{bookId}/{pageNumber}")]
         public IActionResult GetByPageNumber([FromRoute] int bookId, [FromRoute] int pageNumber)
         {
             PageDto res = _bookService.GetBookByPageNumber(bookId, pageNumber);
@@ -71,6 +73,7 @@ namespace BooksWebApi.Controllers
             return Ok(res);
         }
 
+        [Route("create-new/")]
         [HttpPost]
         public IActionResult AddBook([FromBody] SaveBookDto dto)
         {
