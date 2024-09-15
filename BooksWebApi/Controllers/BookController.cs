@@ -26,8 +26,28 @@ namespace BooksWebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute] int id)
-        {
+        public IActionResult GetById([FromRoute] int id){
+            BookDto res = _bookService.GetBookById(id);
+
+            if (res == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(res);
+        }
+
+        [HttpGet("{id}/{name}/{author}/{description}")]
+        public IActionResult GetBy([FromRoute] int id = 0, string name = "", string author = "", string description = ""){
+
+            Dictionary<string, object> query = new()
+            {
+                {"id", id },
+                {"name", name},
+                {"author",  author},
+                {"description", description}
+            };
+
             BookDto res = _bookService.GetBookById(id);
 
             if (res == null)

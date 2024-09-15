@@ -37,6 +37,44 @@ namespace BooksWebApi.Core.Application.Services
             return _mapper.Map<PageDto>(_bookRepository.GetByPageNumber(bookId, pageNumber));
         }
 
+        public BookDto GetBookByQuery(Dictionary<string, object> query)
+        {
+            List<BookDto> books = _mapper.Map<List<BookDto>>(GetAllBooks());
+            BookDto result;
+
+            foreach(var value in query.Values)
+            {
+                // convert to string since a string that says "Jon" can't be converted to int
+                bool valid = value.ToString() != "0" && value.ToString() != "" && value != null;
+
+                if (valid)
+                {
+                    result = (BookDto) books.Where(b => b.Id.ToString() == value?.ToString() ||
+                    b.Name == value?.ToString() ||
+                    b.Author == value?.ToString() ||
+                    b.Description.Contains(value?.ToString()!));
+
+                    return result;
+                }  
+                else
+                {
+                    result = new BookDto()
+                    {
+                        Id = 0,
+                        Name = "Invalid",
+                        Author = "Invalid",
+                        Description = "Invalid Book Request"
+                    };
+
+                    return result;
+                }
+            }
+
+            // just to push without errors
+            return new BookDto();
+
+        }
+
         public void AddBook(SaveBookDto dto)
         {
             Book book = _mapper.Map<Book>(dto);

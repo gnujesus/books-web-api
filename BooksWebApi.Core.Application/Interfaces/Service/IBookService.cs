@@ -14,8 +14,8 @@ namespace BooksWebApi.Core.Application.Interfaces.Service
         IEnumerable<BookDto> GetAllBooks();
         BookDto GetBookById(int id);
         PageDto GetBookByPageNumber(int bookId, int pageNumber);
+        BookDto GetBookByQuery(Dictionary<string, object> query);
         void AddBook(SaveBookDto book);
-
         void DeleteBook(int id);
         void UpdateBook(int id, SaveBookDto dto);
     }
